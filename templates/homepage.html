@@ -1,0 +1,64 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link rel = "stylesheet" href = "{{url_for('static',filename = 'styles/stylemain.css')}}">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    
+   
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark" id = "nav1">
+        <a class="navbar-brand" style="color: white; font-size: 2vw;">COVIRISK</a>
+    </nav>
+    
+    <div class = "mdiv">
+    <p id = "heading"> COVID-19 DEATH RISK PREDICTOR</p>
+    
+    <img class = "wave" src = "{{url_for('static',filename = 'img/wave.png')}}">
+    <div class = "container">
+    
+            <img class = "img" src = "{{url_for('static',filename = 'img/medical.svg')}}">
+    
+        
+    </div>
+    </div>
+    <p id = "heading2">
+        ENTER PATIENT DETAILS
+    </p>
+    <div class = "form-content">
+    <form action='/predict' method="post" class="form">
+        
+        <input type = "text" name = "gender" placeholder="Gender" class="inp1">
+
+        <input type = "text" name = "pneu" placeholder="Is Patient Suffering from Pneumonia?"class="inp1">
+    
+        <input type = "text" name = "age" placeholder="Enter Age" class="inp1">
+        <input type = "text" name = "preg" placeholder="If Female is she pregnant?"class="inp1">
+        <input type = "text" name = "asth" placeholder="Is patient suffering from asthma?"class="inp1">
+        <input type = "text" name = "card" placeholder="Any cardiovascular problem?"class="inp1">
+        <input type = "text" name = "obs" placeholder="Obesity?"class="inp1">
+        
+
+    
+        <button type="submit" id = "b1"><b>SUBMIT</b></button>
+      </form>
+    </div>
+      <br>
+      {{pred}}
+    <br>
+    <nav class="navbar navbar-dark bg-dark" id = "navend">
+        <a class="navbar-brand" style="color: white; width: 100%;">Made by Hemant Chauhan</a>
+    </nav>
+</body>
+</html>
